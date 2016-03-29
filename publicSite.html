@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ app }}</title>
+<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style type="text/css">
+body { font-family: 'Raleway', sans-serif; color: #839496; }
+
+.page_wrap {  width: 600px; margin: 0 auto; padding-bottom: 125px; margin-top: 25px; }
+.page_wrap a { color: #268bd2; text-decoration: none; }
+
+.color_a { color: #2aa198; }
+.color_b { color: #657b83; }
+
+.list_wrap { width: 400px; margin: 0 auto; }
+li { margin-bottom: 15px; padding-left: 10px; }
+
+</style>
+</head>
+<body>
+  <main class="page_wrap">
+    {{ page_html|safe }}
+    <section class="list_wrap">
+      <ul class="names">{% for data in names %}
+        <li>{{ data.first_name }} {{ data.last_name }}</li>
+      {% endfor %}</ul>
+    </section><!-- - /list_wrap - -->
+  </main><!-- - /page_wrap - -->
+</body>
+</html>
